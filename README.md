@@ -1,33 +1,18 @@
-# Property Alliance PRO — Single + Bulk + HUD + AI Boost
 
-**Zero-config launch (no Git):**
-1) Go to https://vercel.com/new → Import Project → **Upload** this zip.
-2) Click **Deploy**.
-3) Add env vars and redeploy (Settings → Environment Variables):
-   - `OPENAI_API_KEY` (enables AI Boost)
-   - `OPENAI_MODEL` (default `gpt-4.1-mini`)
-   - `HUD_API_TOKEN` (optional exact Section 8 SAFMR)
-   - `NEXT_PUBLIC_BASE_URL` = your deployed URL (e.g. `https://your-app.vercel.app`)
+# Property Alliance — One‑Click Deploy
 
-**Local run**
-```bash
-npm i
-npm run dev
-# open http://localhost:3000
-```
+Click the button to deploy this repo to Vercel in one step.  
+**Replace** `<YOUR_GITHUB_USER>` and `<REPO>` below after you push this folder to GitHub.
 
-**CSV columns**
-`address,url,price,rent,taxesAnnual,insuranceAnnual,vacancyPct,mgmtPct,maintenancePct,capexPct,hoaMonthly,ownerUtilitiesMonthly,closingPct,repairs,downPct,ratePct,termYears,beds,baths,sqft,yearBuilt,zip`
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F<YOUR_GITHUB_USER>%2F<REPO>&project-name=property-alliance&repository-name=property-alliance&demo-title=Property%20Alliance&demo-description=AI%20deal%20analyzer%20with%20Seller%20Finance%2C%20Section%208%2C%20bulk%20hotlist&demo-url=&env=OPENAI_API_KEY,OPENAI_MODEL,HUD_API_TOKEN,NPM_FLAGS&envDescription=Optional%3A%20Add%20AI%20%28OPENAI_API_KEY%29%20and%20HUD%20%28HUD_API_TOKEN%29.%20Set%20NPM_FLAGS%20to%20%60--legacy-peer-deps%20--no-audit%20--no-fund%60&envLink=https%3A%2F%2Fvercel.com%2Fdocs%2Fprojects%2Fenvironment-variables)
 
-**What it does**
-- Single or bulk import, nationwide.
-- Auto-enrich from listing URL (agent, photos, basic metadata).
-- Returns cap rate, DSCR, cash-on-cash, monthly cashflow.
-- HUD/Section 8: pulls SAFMR when token provided; otherwise uses a smart fallback and shows the UA used.
-- AI Boost (optional): rent band, condition guess, risks, and an email offer draft.
-- Exports: ranked CSV/JSON and agent email drafts.
+## Recommended environment variables (can be skipped for a quick test)
+- `OPENAI_API_KEY` — enables AI Boost
+- `OPENAI_MODEL` — default `gpt-4.1-mini`
+- `HUD_API_TOKEN` — exact SAFMR from HUD API
+- `NPM_FLAGS` — `--legacy-peer-deps --no-audit --no-fund`
 
-
-## Branding
-- Included `/public/logo.svg`. Replace with your own to rebrand instantly.
-- Scoring tuned to CoC 10–12%, ROI 10–15%, DSCR ≥ 1.25.
+## How to use
+1) Push this folder to GitHub (create a repo, drag‑drop files).  
+2) Click the button above, then Deploy.  
+3) Visit `/single` or `/bulk` to start analyzing.
